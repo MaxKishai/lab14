@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Масиви</title>
+</head>
+<body>
+   
+
+    <script>
+        // Масиви фруктів
+        let fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+        let citrus = ['orange', 'lemon', 'lime'];
+
+        // 1. Виведення масиву fruits
+        document.write("<p><b>Масив fruits:</b> " + fruits.join(", ") + "</p>");
+
+        // 2. Виведення масиву citrus
+        document.write("<p><b>Масив citrus:</b> " + citrus.join(", ") + "</p>");
+
+        // 3. Об'єднаний масив fruits та citrus
+        let combined = fruits.concat(citrus);
+        document.write("<p><b>Об'єднаний масив:</b> " + combined.join(", ") + "</p>");
+
+        // 4. Вставка нових елементів після "mango"
+        let mangoIndex = fruits.indexOf('mango');
+        if (mangoIndex !== -1) {
+            fruits.splice(mangoIndex + 1, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+        }
+        document.write("<p><b>Масив fruits після вставки:</b> " + fruits.join(", ") + "</p>");
+
+        // 5. Видалення останніх 3 елементів масиву fruits
+        fruits.splice(-3);
+        document.write("<p><b>Масив fruits після видалення останніх 3 елементів:</b> " + fruits.join(", ") + "</p>");
+
+        // 6. Виведення відсортованого масиву fruits в алфавітному порядку
+        let sortedFruits = [...fruits].sort();
+        document.write("<p><b>Відсортований масив fruits:</b> " + sortedFruits.join(", ") + "</p>");
+
+        // 7. Виведення масиву fruits у зворотному алфавітному порядку
+        let reverseSortedFruits = [...fruits].sort().reverse();
+        document.write("<p><b>Масив fruits у зворотному алфавітному порядку:</b> " + reverseSortedFruits.join(", ") + "</p>");
+
+        // 8. Виведення масиву fruits, відсортованого за довжиною слів
+        let lengthSortedFruits = [...fruits].sort((a, b) => a.length - b.length);
+        document.write("<p><b>Масив fruits, відсортований за довжиною слів:</b> " + lengthSortedFruits.join(", ") + "</p>");
+    </script>
+    <p> <a href="index.html" target="_blank">Назад</a> </p>
+</body>
+</html>

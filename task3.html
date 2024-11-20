@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Масиви</title>
+</head>
+<body>
+
+
+    <script>
+        // Генерація масиву з 15 елементів
+        let array = [];
+        for (let i = 0; i < 15; i++) {
+            array[i] = Math.floor(Math.random() * 100); // Генерація випадкових чисел від 0 до 99
+        }
+
+        // Виведення масиву на екран
+        document.write("<p><b>Масив:</b> " + array.join(" ") + "</p>");
+
+        // Задане значення D та F
+        let D = 50; // Задане значення для порівняння з елементами масиву
+        let F = 30; // Задане значення для підрахунку елементів масиву
+
+        // 1. Знаходимо середнє арифметичне чисел, більших за D і які стоять на непарних місцях
+        let sum = 0;
+        let count = 0;
+
+        for (let i = 1; i < array.length; i += 2) { // Перевіряємо тільки непарні місця (i=1,3,5...)
+            if (array[i] > D) {
+                sum += array[i];
+                count++;
+            }
+        }
+
+        let average = count > 0 ? sum / count : 0; // Обчислюємо середнє
+        document.write("<p><b>Середнє арифметичне чисел на непарних місцях, більших за D (" + D + "):</b> " + average.toFixed(2) + "</p>");
+
+        // 2. Визначаємо кількість чисел, не більших за F
+        let countNotGreaterThanF = array.filter(num => num <= F).length;
+        document.write("<p><b>Кількість чисел, не більших за F (" + F + "):</b> " + countNotGreaterThanF + "</p>");
+    </script>
+    <p> <a href="index.html" target="_blank">Назад</a> </p>
+</body>
+</html>

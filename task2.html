@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання з масивом</title>
+</head>
+<body>
+
+
+    <script>
+        // Створення масиву з 15 елементів
+        let array = [];
+        for (let i = 0; i < 15; i++) {
+            array[i] = Math.floor(Math.random() * 100); // Генерація випадкових чисел від 0 до 99
+        }
+
+        // Виведення масиву на екран
+        document.write("<p><b>Масив:</b> " + array.join(" ") + "</p>");
+
+        // Запит на номер елемента для заміни (наприклад, за індексом 5)
+        let indexToSwap = 5; // Можна змінити індекс на будь-який
+
+        // Пошук мінімального елемента в масиві
+        let minValue = array[0];
+        let minIndex = 0;
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] < minValue) {
+                minValue = array[i];
+                minIndex = i;
+            }
+        }
+
+        // Виведення мінімального елемента та його індексу
+        document.write("<p><b>Мінімальний елемент:</b> " + minValue + " на індексі " + minIndex + "</p>");
+
+        // Замінюємо мінімальний елемент на елемент за заданим індексом
+        let temp = array[minIndex];
+        array[minIndex] = array[indexToSwap];
+        array[indexToSwap] = temp;
+
+        // Виведення оновленого масиву
+        document.write("<p><b>Масив після заміни:</b> " + array.join(" ") + "</p>");
+    </script>
+    <p> <a href="index.html" target="_blank">Назад</a> </p>
+</body>
+</html>
